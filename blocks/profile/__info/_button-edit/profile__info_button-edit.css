@@ -1,0 +1,33 @@
+.profile__info_button-edit {
+  display: flex;
+  margin: 0;
+  grid-row: 1;
+  grid-column: 2;
+  max-width: 24px;
+  padding: 7px;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  background-color: #000000;
+  border: 1px solid #ffffff;
+  object-fit: cover;
+  object-position: center;
+  align-self: center;
+  margin-top: 8px;
+}
+
+.profile__info_button-edit:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.profile__info_button-edit:focus {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 320px) {
+  .profile__info_button-edit {
+    max-width: 18px;
+    padding: 4px;
+    margin: 0;
+  }
+}

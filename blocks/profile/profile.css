@@ -1,0 +1,38 @@
+.profile {
+  display: flex;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 40px auto 50px;
+}
+
+@media screen and (max-width: 950px) {
+  .profile {
+    max-width: 88%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .profile {
+    display: grid;
+    grid: 120px / repeat(2, max-content);
+    gap: 36px 15px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .profile {
+    grid: repeat(3, max-content) / 100%;
+    row-gap: 26px;
+    margin: 28px 6% 36px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile {
+    max-width: 282px;
+    grid: repeat(3, max-content) / 282px;
+    row-gap: 26px;
+    margin: 42px 19px 36px;
+  }
+}

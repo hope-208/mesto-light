@@ -1,0 +1,18 @@
+.element__caption_button-like {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  align-self: center;
+  object-fit: cover;
+  margin-left: 25px;
+  z-index: 2;
+}
+
+.element__caption_button-like:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.element__caption_button-like:focus {
+  opacity: 0.7;
+}
