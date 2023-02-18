@@ -1,18 +1,33 @@
 .profile__button-add {
+  height: 50px;
   margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  box-sizing: border-box;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   max-width: 150px;
   width: 100%;
-  padding: 15px 62px;
-  background-color: #000000;
+  background: #000000 url(../../../images/button-add.svg) no-repeat center /
+    22px;
   border: 2px solid #ffffff;
   border-radius: 2px;
-  align-self: center;
-  justify-content: center;
-  object-position: center;
-  object-fit: cover;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .profile__button-add:hover {
@@ -26,7 +41,10 @@
 
 @media screen and (max-width: 770px) {
   .profile__button-add {
+    -ms-grid-row: 2;
     grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-column: 1 / 4;
     max-width: 100%;
   }
@@ -34,13 +52,17 @@
 
 @media screen and (max-width: 630px) {
   .profile__button-add {
+    -ms-grid-row: 3;
     grid-row: 3;
+    -ms-grid-column: 1;
     grid-column: 1;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 495px) {
   .profile__button-add {
     padding: 15px 62px;
+    background: #000000 url(../../../images/button-add.svg) no-repeat center /
+      16px;
   }
 }

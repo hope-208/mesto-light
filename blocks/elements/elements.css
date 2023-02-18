@@ -1,7 +1,9 @@
 .elements {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -ms-grid;
   display: grid;
   grid: 361px / repeat(3, 282px);
   gap: 20px 17px;
@@ -13,7 +15,10 @@
     max-width: 88%;
     margin: 0 auto;
     grid: 361px / repeat(2, 282px);
-    justify-content: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -22,13 +27,17 @@
     max-width: 88%;
     margin: 0 auto;
     grid: 361px / 282px;
-    justify-content: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 495px) {
   .elements {
     max-width: 282px;
+    width: 100%;
     row-gap: 20px;
   }
 }

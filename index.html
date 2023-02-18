@@ -1,134 +1,147 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="pages/index.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pages/index.css">
     <title>Mesto</title>
   </head>
 
   <body class="body">
     <div class="page">
-      <header class="header">
-        <img
-          class="header__logo"
-          src="images/logo.svg"
-          alt="Логотип: Mesto Russia"
-        />
-      </header>
 
-      <main>
-        <section class="profile">
-          <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар" />
-          <div class="profile__info">
-            <h1 class="profile__info profile__info_title">Жак-Ив Кусто</h1>
-            <p class="profile__info profile__info_subtitle">
-              Исследователь океана
-            </p>
-            <button class="profile__info profile__info_button-edit" name="edit">
-              <img src="images/pen.svg" alt="Кнопка 'Редактировать профиль'" />
-            </button>
-          </div>
-          <button class="profile__button-add" name="add">
-            <img src="images/button-add.svg" alt="Кнопка 'Плюс'" />
-          </button>
-        </section>
-
-        <section class="elements" aria-label="Записи в профиле">
-          <figure class="element">
-            <img
-              class="element__cover"
-              src="images/Karachayevsk.png"
-              alt="Обложка: Карачаево-Черкессия"
-            />
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">
-                Карачаево-Черкессия
-              </h2>
-              <button class="element__caption element__caption_button-like">
-                <img src="images/like.svg" alt="Кнопка 'Мне нравится'" />
+      <dialog class="popup">
+            <form class='popup__container' id="popupForm">
+              <button class="popup__container_button-close" form="popupForm">
               </button>
-            </figcaption>
-          </figure>
-
-          <figure class="element">
-            <img
-              class="element__cover"
-              src="images/elbrus.png"
-              alt="Обложка: Гора Эльбрус"
-            />
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">
-                Гора Эльбрус
-              </h2>
-              <button class="element__caption element__caption_button-like">
-                <img src="images/like.svg" alt="Кнопка 'Мне нравится'" />
+              <div class="popup__form">
+              <h2 class="popup__form_title">Редактировать профиль</h2>
+              <input class='popup__form_input-name' type='text' value="Жак-Ив Кусто">
+              <input class='popup__form_input-about' type='text' value="Исследователь океана">
+              <button class='popup__form_button-submit' type='submit' form="popupForm">
+                  Сохранить
               </button>
-            </figcaption>
-          </figure>
+            </div>
+          </form> 
+      </dialog>
 
-          <figure class="element">
+
+          <header class="header">
             <img
-              class="element__cover"
-              src="images/dombay.png"
-              alt="Обложка: Домбай"
-            />
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">Домбай</h2>
-              <button class="element__caption element__caption_button-like">
-                <img src="images/like.svg" alt="Кнопка 'Мне нравится'" />
-              </button>
-            </figcaption>
-          </figure>
+              class="header__logo"
+              src="images/logo.svg"
+              alt="Логотип: Mesto Russia">
+          </header>
 
-          <figure class="element">
-            <img
-              class="element__cover"
-              src="images/Baikal.jpg"
-              alt="Обложка: Байкал"
-            />
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">Байкал</h2>
-              <button class="element__caption element__caption_button-like">
-                <img src="images/like.svg" alt="Кнопка 'Мне нравится'" />
-              </button>
-            </figcaption>
-          </figure>
+          <main>
+            <section class="profile">
+              <img
+                class="profile__avatar"
+                src="images/avatar.jpg"
+                alt="Аватар">
+              <div class="profile__info">
+                <h1 class="profile__info profile__info_title">Жак-Ив Кусто</h1>
+                <p class="profile__info profile__info_subtitle">Исследователь океана</p>
+                <button
+                  class="profile__info profile__info_button-edit"
+                  name="edit"
+                ></button>
+              </div>
+              <button class="profile__button-add" name="add" onclick="window.editPopup.showModal();"></button>
+            </section>
 
-          <figure class="element">
-            <img
-              class="element__cover"
-              src="images/Kamchatka.jpg"
-              alt="Обложка: Камчатка"
-            />
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">Камчатка</h2>
-              <button class="element__caption element__caption_button-like">
-                <img src="images/like.svg" alt="Кнопка 'Мне нравится'" />
-              </button>
-            </figcaption>
-          </figure>
+            <section class="elements" aria-label="Записи в профиле">
+              <figure class="element">
+                <img
+                  class="element__cover"
+                  src="images/Karachayevsk.png"
+                  alt="Обложка: Карачаево-Черкессия">
+                <figcaption class="element__caption">
+                  <h2 class="element__caption element__caption_title">
+                    Карачаево-Черкессия
+                  </h2>
+                  <button class="element__caption element__caption_button-like">
+                  </button>
+                </figcaption>
+              </figure>
 
-          <figure class="element">
-            <img
-              class="element__cover"
-              src="images/Gizhgit.jpg"
-              alt="Обложка: Гиджит"
-            />
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">Гиджит</h2>
-              <button class="element__caption element__caption_button-like">
-                <img src="images/like.svg" alt="Кнопка 'Мне нравится'" />
-              </button>
-            </figcaption>
-          </figure>
-        </section>
-      </main>
+              <figure class="element">
+                <img
+                  class="element__cover"
+                  src="images/elbrus.png"
+                  alt="Обложка: Гора Эльбрус">
+                <figcaption class="element__caption">
+                  <h2 class="element__caption element__caption_title">
+                    Гора Эльбрус
+                  </h2>
+                  <button class="element__caption element__caption_button-like">
+                  </button>
+                </figcaption>
+              </figure>
 
-      <footer class="footer">
-        <p class="footer__copyright">© 2020 Mesto Russia</p>
-      </footer>
-    </div>
+              <figure class="element">
+                <img
+                  class="element__cover"
+                  src="images/dombay.png"
+                  alt="Обложка: Домбай">
+                <figcaption class="element__caption">
+                  <h2 class="element__caption element__caption_title">
+                    Домбай
+                  </h2>
+                  <button class="element__caption element__caption_button-like">
+                  </button>
+                </figcaption>
+              </figure>
+
+              <figure class="element">
+                <img
+                  class="element__cover"
+                  src="images/Baikal.jpg"
+                  alt="Обложка: Байкал">
+                <figcaption class="element__caption">
+                  <h2 class="element__caption element__caption_title">
+                    Байкал
+                  </h2>
+                  <button class="element__caption element__caption_button-like">
+                  </button>
+                </figcaption>
+              </figure>
+
+              <figure class="element">
+                <img
+                  class="element__cover"
+                  src="images/Kamchatka.jpg"
+                  alt="Обложка: Камчатка">
+                <figcaption class="element__caption">
+                  <h2 class="element__caption element__caption_title">
+                    Камчатка
+                  </h2>
+                  <button class="element__caption element__caption_button-like">
+                  </button>
+                </figcaption>
+              </figure>
+
+              <figure class="element">
+                <img
+                  class="element__cover"
+                  src="images/Gizhgit.jpg"
+                  alt="Обложка: Гиджит">
+                <figcaption class="element__caption">
+                  <h2 class="element__caption element__caption_title">
+                    Гиджит
+                  </h2>
+                  <button class="element__caption element__caption_button-like">
+                  </button>
+                </figcaption>
+              </figure>
+            </section>
+          </main>
+
+          <footer class="footer">
+            <p class="footer__copyright">© 2020 Mesto Russia</p>
+          </footer>
+        </div>
+
     <script src="pages/index.js"></script>
   </body>
 </html>
