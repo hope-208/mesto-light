@@ -35,6 +35,12 @@
 
 @media screen and (max-width: 495px) {
   .popup__form {
-    max-width: 282px;
+        max-width: 282px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+                justify-content: space-between;
   }
 }
