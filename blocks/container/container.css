@@ -1,24 +1,22 @@
-.popup__container {
+.container {
   max-width: 470px;
   display: -ms-grid;
   display: grid;
   grid: 32px 330px / 430px 32px;
   gap: 8px;
   -webkit-align-content: center;
-      -ms-flex-line-pack: center;
-          align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 495px) {
-  .popup__container {
+  .container {
     grid: 20px 322px / 282px;
     gap: 16px;
-    background: transparent url(../../../../images/Close.svg) no-repeat center /
-      32px;
     max-width: 282px;
   }
 }

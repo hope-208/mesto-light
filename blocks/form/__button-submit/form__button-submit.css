@@ -1,4 +1,4 @@
-.popup__form_button-submit {
+.form__button-submit {
   max-width: 358px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -8,7 +8,7 @@
   margin-block: 0;
   margin-inline: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: 0;
   margin: 0;
   background-color: #000000;
@@ -21,22 +21,22 @@
   border-radius: 2px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   z-index: 6;
 }
 
-.popup__form_button-submit:hover {
+.form__button-submit:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-.popup__form_button-submit:focus {
+.form__button-submit:focus {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 495px) {
-  .popup__form_button-submit {
+  .form__button-submit {
     width: 84.4%;
     font-size: 14px;
     height: 46px;
