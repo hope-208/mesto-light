@@ -1,0 +1,22 @@
+.popup__form_title {
+  display: flex;
+  max-width: 358px;
+  width: 100%;
+  padding: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  margin-bottom: 44px;
+  z-index: 6;
+}
+
+@media screen and (max-width: 495px) {
+  .popup__form_title {
+    max-width: 84.4%;
+    font-size: 18px;
+    margin-bottom: 75px;
+  }
+}

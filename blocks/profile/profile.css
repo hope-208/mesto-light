@@ -28,11 +28,11 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 495px) {
   .profile {
     max-width: 282px;
-    grid: repeat(3, max-content) / 282px;
+    grid: repeat(3, max-content) / 100%;
     row-gap: 26px;
-    margin: 42px 19px 36px;
+    margin: 42px auto 36px;
   }
 }

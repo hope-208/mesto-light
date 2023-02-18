@@ -1,17 +1,19 @@
 .profile__info_button-edit {
-  display: flex;
+  height: 24px;
   margin: 0;
+  padding: 0;
   grid-row: 1;
   grid-column: 2;
-  max-width: 24px;
-  padding: 7px;
-  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-wrap: wrap;
   box-sizing: border-box;
-  background-color: #000000;
+  width: 24px;
+  background: #000000 url(../../../../images/pen.svg) no-repeat center / 10px;
   border: 1px solid #ffffff;
-  object-fit: cover;
-  object-position: center;
   align-self: center;
+  justify-content: center;
+  object-position: center;
+  object-fit: cover;
   margin-top: 8px;
 }
 
@@ -24,10 +26,12 @@
   opacity: 0.7;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 495px) {
   .profile__info_button-edit {
-    max-width: 18px;
+    width: 18px;
+    height: 18px;
     padding: 4px;
     margin: 0;
+    background: #000000 url(../../../../images/pen.svg) no-repeat center / 7.5px;
   }
 }

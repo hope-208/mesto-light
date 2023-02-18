@@ -26,9 +26,10 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 495px) {
   .elements {
     max-width: 282px;
+    width: 100%;
     row-gap: 20px;
   }
 }

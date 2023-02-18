@@ -28,9 +28,9 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 495px) {
   .profile__info {
     margin: 0 auto;
-    max-width: fit-content;
+    max-width: 282px;
   }
 }
