@@ -9,7 +9,7 @@ editProfileButton.addEventListener('click', function () {
   console.log(editPopup);
 });
 
-let popupButtonClose = document.querySelector('.popup__container_button-close');
+let popupButtonClose = document.querySelector('.container__button-close');
 console.log(popupButtonClose);
 
 popupButtonClose.addEventListener('click', function () {
@@ -17,11 +17,11 @@ popupButtonClose.addEventListener('click', function () {
   console.log(editPopup);
 });
 
-let formElement = document.querySelector('.popup__container');
+let formElement = document.querySelector('.container');
 console.log(formElement);
-let nameInput = document.querySelector('.popup__form_input-name');
+let nameInput = document.querySelector('.form_input-name');
 console.log(nameInput);
-let jobInput = document.querySelector('.popup__form_input-about');
+let jobInput = document.querySelector('.form_input-about');
 console.log(jobInput);
 
 function handleFormSubmit(evt) {

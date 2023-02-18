@@ -15,13 +15,13 @@
 
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
-@import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/__container/_button-close/popup__popup_button-close.css);
-@import url(../blocks/popup/__form/popup__form.css);
-@import url(../blocks/popup/__form/_title/popup__form_title.css);
-@import url(../blocks/popup/__form/_input/popup__form_input-name.css);
-@import url(../blocks/popup/__form/_input/popup__form_input-about.css);
-@import url(../blocks/popup/__form/_button-submit/popup__form_button-submit.css);
+@import url(../blocks/container/container.css);
+@import url(../blocks/container/__button-close/container__button-close.css);
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/_input/form_input-name.css);
+@import url(../blocks/form/_input/form_input-about.css);
+@import url(../blocks/form/__button-submit/form__button-submit.css);
 
 @import url(../blocks/profile/__button-add/profile__button-add.css);
 
@@ -32,10 +32,6 @@
 @import url(../blocks/element/__caption/element__caption.css);
 @import url(../blocks/element/__caption/_title/element__caption_title.css);
 @import url(../blocks/element/__caption/_button-like/element__caption_button-like.css);
-
-@import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/_opened/popup_opened.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
