@@ -2,7 +2,9 @@
   margin: 0;
   margin-block: 0;
   margin-inline: 0;
+  -ms-grid-row: 1;
   grid-row: 1;
+  -ms-grid-column: 1;
   grid-column: 1;
   font-style: normal;
   font-weight: 500;
