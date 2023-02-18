@@ -17,6 +17,8 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 6px 5px 12px;
   margin-bottom: 28px;
+  border-radius: 0;
+  box-shadow: none;
   z-index: 6;
   line-height: 1.2;
 }
