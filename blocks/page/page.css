@@ -11,7 +11,7 @@
   text-rendering: optimizeLegibility;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 880px) {
   .page {
     margin: 36px auto 48px;
   }

@@ -1,0 +1,8 @@
+.button_name-like {
+  height: 19px;
+  max-width: 23px;
+  background: transparent url(../../../images/like.svg) no-repeat center / 22px;
+  border-radius: 0;
+  margin-left: 25px;
+  z-index: 2;
+}

@@ -1,0 +1,39 @@
+.info__title {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  display: block;
+  max-width: 500px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -ms-grid-row-align: end;
+      align-self: end;
+  margin: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 1.14;
+  color: #ffffff;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 950px) {
+  .info__title {
+    text-align: end;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .info__title {
+    max-width: 250px;
+    font-size: 27px;
+    line-height: 1.2;
+  }
+}

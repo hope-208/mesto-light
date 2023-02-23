@@ -3,9 +3,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -15,16 +13,21 @@
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 
 @media screen and (max-width: 950px) {
   .footer {
+    max-width: 88%;
     margin-left: 6%;
   }
 }
 
 @media screen and (max-width: 495px) {
   .footer {
+    margin-top: 48px;
     margin-left: 19px;
   }
 }

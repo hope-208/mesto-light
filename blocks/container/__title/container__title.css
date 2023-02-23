@@ -1,25 +1,30 @@
-.form__title {
+.container__title {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 1;
+  grid-column: 1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  max-width: 358px;
-  width: 100%;
-  padding: 0;
+  width: 358px;
+  padding-top: 34px;
   margin-block: 0;
   margin-inline: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
-  margin-bottom: 44px;
+  -ms-grid-column-align: center;
+      justify-self: center;
   z-index: 6;
 }
 
 @media screen and (max-width: 495px) {
-  .form__title {
-    max-width: 84.4%;
+  .container__title {
+    max-width: 282px;
+    padding: 26px 22px 0;
     font-size: 18px;
     margin-bottom: 60px;
   }
