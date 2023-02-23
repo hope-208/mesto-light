@@ -10,23 +10,33 @@
   <body class="body">
     <div class="page">
       <dialog class="popup">
-        <form class="container" id="popupForm">
-          <button class="container__button-close" form="popupForm"></button>
-          <div class="form">
-            <h2 class="form__title">Редактировать профиль</h2>
+        <div class="container">
+          <button
+            class="button button_name-close"
+            type="reset"
+            form="popupForm"
+          ></button>
+          <h2 class="container__title">Редактировать профиль</h2>
+          <form class="form" name="popupForm" id="popupForm">
             <input
-              class="form form_input-name"
+              class="input input_field-name"
               type="text"
+              name="name"
               value="Жак-Ив Кусто">
             <input
-              class="form form_input-about"
+              class="input input_field-job"
               type="text"
+              name="job"
               value="Исследователь океана">
-            <button class="form__button-submit" type="submit" form="popupForm">
+            <button
+              class="button button_name-submit"
+              type="submit"
+              form="popupForm"
+            >
               Сохранить
             </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </dialog>
 
       <header class="header">
@@ -39,105 +49,114 @@
       <main>
         <section class="profile">
           <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар">
-          <div class="profile__info">
-            <h1 class="profile__info profile__info_title">Жак-Ив Кусто</h1>
-            <p class="profile__info profile__info_subtitle">
-              Исследователь океана
-            </p>
-            <button
-              class="profile__info profile__info_button-edit"
-              name="edit"
-            ></button>
+          <div class="info">
+            <div class="profile__content">
+              <h1 class="info__title">Жак-Ив Кусто</h1>
+              <button
+                class="button button_name-edit"
+                name="edit"
+                type="button"
+              ></button>
+            </div>
+            <p class="info__subtitle">Исследователь океана</p>
           </div>
           <button
-            class="profile__button-add"
+            class="button button_name-add"
             name="add"
-            onclick="window.editPopup.showModal();"
+            type="submit"
           ></button>
         </section>
 
         <section class="elements" aria-label="Записи в профиле">
-          <figure class="element">
+          <article class="element">
             <img
               class="element__cover"
               src="images/Karachayevsk.png"
               alt="Обложка: Карачаево-Черкессия">
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">
-                Карачаево-Черкессия
-              </h2>
+            <div class="caption">
+              <h2 class="caption__title">Карачаево-Черкессия</h2>
               <button
-                class="element__caption element__caption_button-like"
+                class="button button_name-like"
+                type="submit"
+                name="like"
               ></button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
 
-          <figure class="element">
+          <article class="element">
             <img
               class="element__cover"
               src="images/elbrus.png"
               alt="Обложка: Гора Эльбрус">
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">
-                Гора Эльбрус
-              </h2>
+            <div class="caption">
+              <h2 class="caption__title">Гора Эльбрус</h2>
               <button
-                class="element__caption element__caption_button-like"
+                class="button button_name-like"
+                type="submit"
+                name="like"
               ></button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
 
-          <figure class="element">
+          <article class="element">
             <img
               class="element__cover"
               src="images/dombay.png"
               alt="Обложка: Домбай">
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">Домбай</h2>
+            <div class="caption">
+              <h2 class="caption__title">Домбай</h2>
               <button
-                class="element__caption element__caption_button-like"
+                class="button button_name-like"
+                type="submit"
+                name="like"
               ></button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
 
-          <figure class="element">
+          <article class="element">
             <img
               class="element__cover"
               src="images/Baikal.jpg"
               alt="Обложка: Байкал">
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">Байкал</h2>
+            <div class="caption">
+              <h2 class="caption__title">Байкал</h2>
               <button
-                class="element__caption element__caption_button-like"
+                class="button button_name-like"
+                type="submit"
+                name="like"
               ></button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
 
-          <figure class="element">
+          <article class="element">
             <img
               class="element__cover"
               src="images/Kamchatka.jpg"
               alt="Обложка: Камчатка">
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">Камчатка</h2>
+            <div class="caption">
+              <h2 class="caption__title">Камчатка</h2>
               <button
-                class="element__caption element__caption_button-like"
+                class="button button_name-like"
+                type="submit"
+                name="like"
               ></button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
 
-          <figure class="element">
+          <article class="element">
             <img
               class="element__cover"
               src="images/Gizhgit.jpg"
               alt="Обложка: Гиджит">
-            <figcaption class="element__caption">
-              <h2 class="element__caption element__caption_title">Гиджит</h2>
+            <div class="caption">
+              <h2 class="caption__title">Гиджит</h2>
               <button
-                class="element__caption element__caption_button-like"
+                class="button button_name-like"
+                type="submit"
+                name="like"
               ></button>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </section>
       </main>
 
@@ -146,6 +165,6 @@
       </footer>
     </div>
 
-    <script src="pages/index.js"></script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>

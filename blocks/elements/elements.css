@@ -24,13 +24,7 @@
 
 @media screen and (max-width: 630px) {
   .elements {
-    max-width: 88%;
-    margin: 0 auto;
     grid: 361px / 282px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
 }
 
