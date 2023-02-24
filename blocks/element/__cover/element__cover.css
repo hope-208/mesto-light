@@ -5,14 +5,14 @@
   grid-column: 1;
   display: block;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   max-width: 282px;
   aspect-ratio: 1 / 1;
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   overflow: hidden;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;

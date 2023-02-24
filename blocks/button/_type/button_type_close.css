@@ -1,0 +1,41 @@
+.button_type_close {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: calc((100% - (330px + 8px + 32px)) / 2);
+  right: calc((100% - (430px + 8px + 32px)) / 2);
+  background: transparent url(../../../images/Close.svg) no-repeat center / 32px;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  z-index: 11;
+}
+
+@media screen and (max-width: 495px) {
+  .button_type_close {
+    top: calc((100% - (322px + 16px + 20px)) / 2);
+    right: calc((100% - 282px) / 2);
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-column-align: right;
+    justify-self: right;
+  }
+}
+
+.button_type_close:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.button_type_close:focus {
+  opacity: 0.6;
+}

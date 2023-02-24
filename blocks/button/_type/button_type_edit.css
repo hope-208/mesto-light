@@ -1,33 +1,42 @@
-.button_name-edit {
+.button_type_edit {
   height: 24px;
   -ms-grid-row: 1;
   grid-row: 1;
   -ms-grid-column: 2;
   grid-column: 2;
   width: 24px;
-  background: #000000 url(../../../images/pen.svg) no-repeat center / 10px;
-  border: 1px solid #ffffff;
+  background: transparent url(../../../images/pen.svg) no-repeat center / 10px;
+  border: 1px solid #fff;
   margin-top: 30px;
   margin-right: auto;
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 @media screen and (max-width: 950px) {
-  .button_name-edit {
+  .button_type_edit {
     margin-right: 0;
     margin-top: 8px;
   }
 }
 
 @media screen and (max-width: 770px) {
-  .button_name-edit {
+  .button_type_edit {
     width: 18px;
     height: 18px;
     padding: 4px;
-    margin-top: 5px;
+    margin-top: 3px;
     background-size: 7.5px;
   }
+}
+
+.button_type_edit:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.button_type_edit:focus {
+  opacity: 0.6;
 }

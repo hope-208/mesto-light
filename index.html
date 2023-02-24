@@ -10,26 +10,26 @@
   <body class="body">
     <div class="page">
       <dialog class="popup">
-        <div class="container">
+        <div class="popup__container">
           <button
-            class="button button_name-close"
-            type="reset"
+            class="button button_type_close"
+            type="button"
             form="popupForm"
           ></button>
-          <h2 class="container__title">Редактировать профиль</h2>
+          <h2 class="popup__title">Редактировать профиль</h2>
           <form class="form" name="popupForm" id="popupForm">
             <input
-              class="input input_field-name"
+              class="form__input form__input_type_name"
               type="text"
               name="name"
               value="Жак-Ив Кусто">
             <input
-              class="input input_field-job"
+              class="form__input form__input_type_job"
               type="text"
               name="job"
               value="Исследователь океана">
             <button
-              class="button button_name-submit"
+              class="button button_type_submit"
               type="submit"
               form="popupForm"
             >
@@ -48,22 +48,25 @@
 
       <main>
         <section class="profile">
-          <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар">
-          <div class="info">
+          <img
+            class="profile__avatar"
+            src="images/avatar.jpg"
+            alt="Аватар">
+          <div class="profile__info">
             <div class="profile__content">
-              <h1 class="info__title">Жак-Ив Кусто</h1>
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
               <button
-                class="button button_name-edit"
+                class="button button_type_edit"
                 name="edit"
                 type="button"
               ></button>
             </div>
-            <p class="info__subtitle">Исследователь океана</p>
+            <p class="profile__subtitle">Исследователь океана</p>
           </div>
           <button
-            class="button button_name-add"
+            class="button button_type_add"
             name="add"
-            type="submit"
+            type="button"
           ></button>
         </section>
 
@@ -73,11 +76,11 @@
               class="element__cover"
               src="images/Karachayevsk.png"
               alt="Обложка: Карачаево-Черкессия">
-            <div class="caption">
-              <h2 class="caption__title">Карачаево-Черкессия</h2>
+            <div class="element__caption">
+              <h2 class="element__title">Карачаево-Черкессия</h2>
               <button
-                class="button button_name-like"
-                type="submit"
+                class="button button_type_like"
+                type="button"
                 name="like"
               ></button>
             </div>
@@ -88,11 +91,11 @@
               class="element__cover"
               src="images/elbrus.png"
               alt="Обложка: Гора Эльбрус">
-            <div class="caption">
-              <h2 class="caption__title">Гора Эльбрус</h2>
+            <div class="element__caption">
+              <h2 class="element__title">Гора Эльбрус</h2>
               <button
-                class="button button_name-like"
-                type="submit"
+                class="button button_type_like"
+                type="button"
                 name="like"
               ></button>
             </div>
@@ -103,11 +106,11 @@
               class="element__cover"
               src="images/dombay.png"
               alt="Обложка: Домбай">
-            <div class="caption">
-              <h2 class="caption__title">Домбай</h2>
+            <div class="element__caption">
+              <h2 class="element__title">Домбай</h2>
               <button
-                class="button button_name-like"
-                type="submit"
+                class="button button_type_like"
+                type="button"
                 name="like"
               ></button>
             </div>
@@ -118,11 +121,11 @@
               class="element__cover"
               src="images/Baikal.jpg"
               alt="Обложка: Байкал">
-            <div class="caption">
-              <h2 class="caption__title">Байкал</h2>
+            <div class="element__caption">
+              <h2 class="element__title">Байкал</h2>
               <button
-                class="button button_name-like"
-                type="submit"
+                class="button button_type_like"
+                type="button"
                 name="like"
               ></button>
             </div>
@@ -133,11 +136,11 @@
               class="element__cover"
               src="images/Kamchatka.jpg"
               alt="Обложка: Камчатка">
-            <div class="caption">
-              <h2 class="caption__title">Камчатка</h2>
+            <div class="element__caption">
+              <h2 class="element__title">Камчатка</h2>
               <button
-                class="button button_name-like"
-                type="submit"
+                class="button button_type_like"
+                type="button"
                 name="like"
               ></button>
             </div>
@@ -148,11 +151,11 @@
               class="element__cover"
               src="images/Gizhgit.jpg"
               alt="Обложка: Гиджит">
-            <div class="caption">
-              <h2 class="caption__title">Гиджит</h2>
+            <div class="element__caption">
+              <h2 class="element__title">Гиджит</h2>
               <button
-                class="button button_name-like"
-                type="submit"
+                class="button button_type_like"
+                type="button"
                 name="like"
               ></button>
             </div>

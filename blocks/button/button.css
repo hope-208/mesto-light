@@ -8,32 +8,22 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   border: 0;
-  border-radius: 2px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
   -ms-grid-row-align: center;
--webkit-align-self: center;
-    -ms-flex-item-align: center;
-        align-self: center;
+  align-self: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.button:hover {
-  opacity: 0.6;
-  cursor: pointer;
-}
-
-.button:focus {
-  opacity: 0.6;
+  object-fit: cover;
 }
