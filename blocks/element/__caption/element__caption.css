@@ -1,4 +1,4 @@
-.caption {
+.element__caption {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10,7 +10,7 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 25px 20px;
-  background-color: #ffffff;
+  background-color: #fff;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;

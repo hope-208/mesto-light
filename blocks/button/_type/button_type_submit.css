@@ -1,9 +1,10 @@
-.button_name-submit {
+.button_type_submit {
   max-width: 358px;
   margin-block: 0;
   margin-inline: 0;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000;
+  color: #fff;
+  border-radius: 2px;
   padding: 14px 125px;
   font-style: normal;
   font-weight: 400;
@@ -13,17 +14,17 @@
   z-index: 6;
 }
 
-.button_name-submit:hover {
+.button_type_submit:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-.button_name-submit:focus {
+.button_type_submit:focus {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 495px) {
-  .button_name-submit {
+  .button_type_submit {
     max-width: 238px;
     font-size: 14px;
     height: 46px;

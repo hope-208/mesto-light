@@ -1,4 +1,4 @@
-.button_name-add {
+.button_type_add {
   -ms-grid-row: 1;
   grid-row: 1;
   -ms-grid-column: 3;
@@ -11,21 +11,31 @@
   height: 50px;
   background: transparent url(../../../images/button-add.svg) no-repeat center /
     22px;
-  border: 2px solid #ffffff;
+  border: 2px solid #fff;
+  border-radius: 2px;
   -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
 }
 
 @media screen and (max-width: 950px) {
-  .button_name-add {
+  .button_type_add {
     max-width: 282px;
     width: 100%;
   }
 }
 
 @media screen and (max-width: 770px) {
-  .button_name-add {
+  .button_type_add {
     padding: 15px 62px;
     background-size: 16px;
   }
+}
+
+.button_type_add:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.button_type_add:focus {
+  opacity: 0.6;
 }

@@ -12,7 +12,7 @@
   margin-block: 0;
   margin-inline: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   gap: 18px;
 }
 
@@ -21,15 +21,14 @@
     width: 100%;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
 @media screen and (max-width: 770px) {
   .profile__content {
     max-width: 292px;
-    width: 100%;
     gap: 10px;
   }
 }

@@ -1,4 +1,4 @@
-.container__title {
+.popup__title {
   -ms-grid-row: 2;
   grid-row: 2;
   -ms-grid-column: 1;
@@ -7,22 +7,23 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 358px;
+  max-width: 358px;
+  width: 100%;
   padding-top: 34px;
   margin-block: 0;
   margin-inline: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
   -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
   z-index: 6;
 }
 
 @media screen and (max-width: 495px) {
-  .container__title {
+  .popup__title {
     max-width: 282px;
     padding: 26px 22px 0;
     font-size: 18px;
