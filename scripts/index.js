@@ -3,6 +3,7 @@
 // открытие попапа профиля
 let editProfileButton = document.querySelector('.button__edit');
 let editPopupProfile = document.querySelector('.popup_edit-profile');
+let popupAddPhoto = document.querySelector('.popup_add-photo');
 let formElementProfile = document.querySelector('.form_edit-profile');
 let nameInput = document.querySelector('.form__input_type-name');
 let jobInput = document.querySelector('.form__input_type-job');
@@ -43,12 +44,11 @@ popupButtonProfileClose.addEventListener('click', popupProfileClose);
 
 const container = document.querySelector('.container'); // елементы на странице
 const cardsContainer = container.querySelector('.elements'); // блок с карточками
+const cardItem = container.querySelector('.element'); // карточка
 const openPopupPhoto = container.querySelector('.button__add'); // кнопка открытия попапа добавления фото
 const createCardsButton = container.querySelector('.button__submit_add-photo'); // создать карточку
-const deleteButton = container.querySelector('.button__delete'); // удалить карточку
 let closePhotoButton = document.querySelector('.button__close_add-photo'); // закрыть попап добавления фото
 const cardsTemplate = document.querySelector('.card-template').content; // шаблон
-
 const zoomPopup = document.querySelector('.popup_zoom');
 
 // массив с карточками
@@ -83,17 +83,30 @@ function createCard(element) {
   const cardsOnPage = cardsTemplate.cloneNode(true);
   const captionPhoto = cardsOnPage.querySelector('.element__title');
   const coverPhoto = cardsOnPage.querySelector('.element__cover');
-
   // добавить карточку
   captionPhoto.textContent = element.name;
   coverPhoto.setAttribute('src', element.link);
   coverPhoto.setAttribute('alt', element.name);
+
+  const popupZoomPhoto = zoomPopup.querySelector('.popup__photo');
+  const popupZoomTitle = zoomPopup.querySelector('.popup__photo-title');
+  popupZoomPhoto.setAttribute('src', element.link);
+  popupZoomPhoto.setAttribute('alt', element.name);
+  popupZoomTitle.textContent = element.name;
 
   // поставить лайк
   const likeButton = cardsOnPage.querySelector('.button__like');
   likeButton.addEventListener('click', function (evt) {
     evt.target.classList.toggle('button__like_active');
   });
+
+  // удалить карточку
+  const deleteButton = cardsOnPage.querySelector('.button__delete');
+  deleteButton.addEventListener('click', function (evt) {
+    evt.target.closest('.element').remove();
+  });
+
+  zoomPopup.classList.remove('popup_opened-zoom');
 
   // увеличить фото
   coverPhoto.addEventListener('click', popupZoomOpen);
@@ -124,7 +137,6 @@ initialCards.forEach(function (element) {
 
 // добавление фотографии
 let addPhotoButton = document.querySelector('.button__add');
-let popupAddPhoto = document.querySelector('.popup_add-photo');
 let formElementPhoto = document.querySelector('.form_add-photo');
 let titlePhotoInput = document.querySelector('.form__input_photo-title');
 let linkPhotoInput = document.querySelector('.form__input_photo-link');
