@@ -1,0 +1,46 @@
+.button-like {
+  margin: 0;
+  padding: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  border: 0;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+
+
+
+  height: 19px;
+  max-width: 23px;
+  background: transparent url(../../images/like.svg) no-repeat center / 22px;
+  margin-left: 25px;
+  z-index: 2;
+}
+
+.button-like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.button-like:focus {
+  opacity: 0.5;
+}

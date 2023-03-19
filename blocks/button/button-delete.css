@@ -1,4 +1,4 @@
-.button {
+.button-delete {
   margin: 0;
   padding: 0;
   margin-block: 0;
@@ -26,4 +26,32 @@
   object-position: center;
   -o-object-fit: cover;
   object-fit: cover;
+
+
+  height: 19.3px;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  max-width: 18px;
+  display: flex;
+  position: relative;
+  background: transparent url(../../images/delete.svg) no-repeat center /
+    18px;
+  margin-top: 20px;
+  margin-right: 20px;
+  -ms-grid-column-align: end;
+  justify-self: end;
+  -ms-grid-row-align: center;
+  align-self: start;
+  z-index: 2;
+}
+
+.button-delete:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.button-delete:focus {
+  opacity: 0.6;
 }

@@ -1,0 +1,58 @@
+.button-submit {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+
+
+  max-width: 358px;
+  margin-block: 0;
+  margin-inline: 0;
+  background-color: #000;
+  color: #fff;
+  border-radius: 2px;
+  padding: 14px 125px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+  z-index: 6;
+}
+
+.button-submit:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.button-submit:focus {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 495px) {
+  .button-submit {
+    max-width: 238px;
+    font-size: 14px;
+    height: 46px;
+  }
+}

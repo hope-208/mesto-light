@@ -1,0 +1,68 @@
+.button-close {
+  margin: 0;
+  padding: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: calc((100% - (330px + 8px + 32px)) / 2);
+  right: calc((100% - (430px + 8px + 32px)) / 2);
+  background: transparent url(../../images/Close.svg) no-repeat center / 32px;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  z-index: 11;
+}
+
+@media screen and (max-width: 495px) {
+  .button-close {
+    top: calc((100% - (322px + 16px + 20px)) / 2);
+    right: calc((100% - 282px) / 2);
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-column-align: right;
+    justify-self: right;
+  }
+}
+
+.button-close:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.button-close:focus {
+  opacity: 0.6;
+}

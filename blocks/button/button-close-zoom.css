@@ -1,0 +1,56 @@
+.button-close-zoom {
+  margin: 0;
+  padding: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 32px;
+  height: 32px;
+  background: transparent url(../../images/Close.svg) no-repeat center / 32px;
+  align-content: center;
+  z-index: 11;
+}
+
+@media screen and (max-width: 495px) {
+  .button-close-zoom {
+    top: -36px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+  }
+}
+
+.button-close-zoom:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.button-close-zoom:focus {
+  opacity: 0.6;
+}
