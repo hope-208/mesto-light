@@ -1,6 +1,3 @@
-// Попап профиля
-
-// открытие попапа профиля
 let editProfileButton = document.querySelector('.button__edit');
 let editPopupProfile = document.querySelector('.popup_edit-profile');
 let popupAddPhoto = document.querySelector('.popup_add-photo');
@@ -12,46 +9,21 @@ let jobProfile = document.querySelector('.profile__subtitle');
 let popupButtonProfileClose = document.querySelector(
   '.button__close_edit-profile'
 );
+let closePhotoButton = document.querySelector('.button__close_add-photo');
+let addPhotoButton = document.querySelector('.button__add');
+let formElementPhoto = document.querySelector('.form_add-photo');
+let titlePhotoInput = document.querySelector('.form__input_photo-title');
+let linkPhotoInput = document.querySelector('.form__input_photo-link');
 
-// открыть попап
-function popupProfileOpen() {
-  editPopupProfile.classList.add('popup_opened');
-  nameInput.value = nameProfile.textContent;
-  jobInput.value = jobProfile.textContent;
-}
-
-// закрыть попап профиля
-function popupProfileClose() {
-  editPopupProfile.classList.remove('popup_opened');
-}
-
-// заменить данные профиля
-function handleFormProfileSubmit(evt) {
-  evt.preventDefault();
-  nameProfile.textContent = nameInput.value;
-  jobProfile.textContent = jobInput.value;
-  popupProfileClose();
-}
-
-// отслеживание действий с кнопками попапа профиля
-editProfileButton.addEventListener('click', popupProfileOpen);
-
-formElementProfile.addEventListener('submit', handleFormProfileSubmit);
-
-popupButtonProfileClose.addEventListener('click', popupProfileClose);
-
-// Попап фото
-
-const container = document.querySelector('.container'); // елементы на странице
-const cardsContainer = container.querySelector('.elements'); // блок с карточками
-const cardItem = container.querySelector('.element'); // карточка
-const openPopupPhoto = container.querySelector('.button__add'); // кнопка открытия попапа добавления фото
-const createCardsButton = container.querySelector('.button__submit_add-photo'); // создать карточку
-let closePhotoButton = document.querySelector('.button__close_add-photo'); // закрыть попап добавления фото
-const cardsTemplate = document.querySelector('.card-template').content; // шаблон
+const container = document.querySelector('.container');
+const cardsContainer = container.querySelector('.elements');
+const cardItem = container.querySelector('.element');
+const openPopupPhoto = container.querySelector('.button__add');
+const createCardsButton = container.querySelector('.button__submit_add-photo');
+const cardsTemplate = document.querySelector('.card-template').content;
 const zoomPopup = document.querySelector('.popup_zoom');
+const closeZoomButton = zoomPopup.querySelector('.button__close-zoom');
 
-// массив с карточками
 const initialCards = [
   {
     name: 'Архыз',
@@ -79,79 +51,80 @@ const initialCards = [
   },
 ];
 
+function popupProfileOpen() {
+  editPopupProfile.classList.add('popup_opened');
+  nameInput.value = nameProfile.textContent;
+  jobInput.value = jobProfile.textContent;
+}
+
+
+function popupProfileClose() {
+  editPopupProfile.classList.remove('popup_opened');
+}
+
+function handleFormProfileSubmit(evt) {
+  evt.preventDefault();
+  nameProfile.textContent = nameInput.value;
+  jobProfile.textContent = jobInput.value;
+  popupProfileClose();
+}
+
 function createCard(element) {
   const cardsOnPage = cardsTemplate.cloneNode(true);
   const captionPhoto = cardsOnPage.querySelector('.element__title');
   const coverPhoto = cardsOnPage.querySelector('.element__cover');
-  // добавить карточку
+  const popupZoomPhoto = zoomPopup.querySelector('.popup__photo');
+  const popupZoomTitle = zoomPopup.querySelector('.popup__photo-title');
+  const likeButton = cardsOnPage.querySelector('.button__like');
+  const deleteButton = cardsOnPage.querySelector('.button__delete');
+
   captionPhoto.textContent = element.name;
   coverPhoto.setAttribute('src', element.link);
   coverPhoto.setAttribute('alt', element.name);
 
-  const popupZoomPhoto = zoomPopup.querySelector('.popup__photo');
-  const popupZoomTitle = zoomPopup.querySelector('.popup__photo-title');
   popupZoomPhoto.setAttribute('src', element.link);
   popupZoomPhoto.setAttribute('alt', element.name);
   popupZoomTitle.textContent = element.name;
 
-  // поставить лайк
-  const likeButton = cardsOnPage.querySelector('.button__like');
   likeButton.addEventListener('click', function (evt) {
     evt.target.classList.toggle('button__like_active');
   });
 
-  // удалить карточку
-  const deleteButton = cardsOnPage.querySelector('.button__delete');
   deleteButton.addEventListener('click', function (evt) {
     evt.target.closest('.element').remove();
   });
 
   zoomPopup.classList.remove('popup_opened-zoom');
 
-  // увеличить фото
   coverPhoto.addEventListener('click', popupZoomOpen);
 
   return cardsOnPage;
 }
 
-//
-// увеличить фото
 function popupZoomOpen() {
   zoomPopup.classList.add('popup_opened-zoom');
 }
 
-// выйти из увеличения
+
 function popupZoomClose() {
   zoomPopup.classList.remove('popup_opened-zoom');
 }
-
-const closeZoomButton = zoomPopup.querySelector('.button__close-zoom');
-closeZoomButton.addEventListener('click', function () {
-  popupZoomClose(zoomPopup);
-});
 
 initialCards.forEach(function (element) {
   const card = createCard(element);
   cardsContainer.prepend(card);
 });
 
-// добавление фотографии
-let addPhotoButton = document.querySelector('.button__add');
-let formElementPhoto = document.querySelector('.form_add-photo');
-let titlePhotoInput = document.querySelector('.form__input_photo-title');
-let linkPhotoInput = document.querySelector('.form__input_photo-link');
-
-// открыть попап добавления фото
 function popupAddPhotoOpen() {
   popupAddPhoto.classList.add('popup_opened');
 }
 
-// закрыть попап добавления фото
+
 function popupAddPhotoClose() {
   popupAddPhoto.classList.remove('popup_opened');
 }
 
-// добавить новую карточку на страницу
+
 function handleFormPhotoSubmit(evt) {
   evt.preventDefault();
 
@@ -173,9 +146,18 @@ function addCard(element, cardsContainer) {
   cardsContainer.prepend(card);
 }
 
-// отслеживание действий с кнопками попапа добавления фото
+editProfileButton.addEventListener('click', popupProfileOpen);
+
+formElementProfile.addEventListener('submit', handleFormProfileSubmit);
+
+popupButtonProfileClose.addEventListener('click', popupProfileClose);
+
 addPhotoButton.addEventListener('click', popupAddPhotoOpen);
 
 formElementPhoto.addEventListener('submit', handleFormPhotoSubmit);
 
 closePhotoButton.addEventListener('click', popupAddPhotoClose);
+
+closeZoomButton.addEventListener('click', function () {
+  popupZoomClose(zoomPopup);
+});
