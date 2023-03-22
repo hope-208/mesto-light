@@ -108,8 +108,8 @@ function popupZoomClose(zoomPopup) {
   zoomPopup.classList.remove('popup_opened-zoom');
 }
 
-initialCards.forEach(addCard());
-/*initialCards.forEach(function (element) {
+/*initialCards.forEach(addCard);
+initialCards.forEach(function (element) {
   const card = createCard(element);
   cardsContainer.prepend(card);
 });*/
@@ -129,9 +129,10 @@ function handleFormPhotoSubmit(evt) {
   closePopup();
 }
 
-function addCard(element, cardsContainer) {
+function addCard(element, cardsContainer, initialCards) {
   const card = createCard(element);
   cardsContainer.prepend(card);
+  initialCards.forEach(element);
 }
 /*
 closeZoomButton.addEventListener('click', function () {
