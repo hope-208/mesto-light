@@ -1,14 +1,15 @@
+import { initialCards } from './cards';
+
 let nameInput = document.querySelector('.form__input_type-name');
 let jobInput = document.querySelector('.form__input_type-job');
 let nameProfile = document.querySelector('.profile__title');
 let jobProfile = document.querySelector('.profile__subtitle');
 
+const input = document.querySelectorAll('form__input');
 const editProfileButton = document.querySelector('.button-edit');
 const formElementProfile = document.querySelector('.form_edit-profile');
-const popup = document.querySelector('.popup');
-const popupButtonProfileClose = document.querySelector(
-  '.button-close_edit-profile'
-);
+const popup = document.querySelectorAll('.popup');
+const popupButtonProfileClose = document.querySelector('.button-close_edit-profile');
 const closeButton = document.querySelector('.button-close');
 const addPhotoButton = document.querySelector('.button-add');
 const formElementPhoto = document.querySelector('.form_add-photo');
@@ -34,8 +35,9 @@ function openPopup(popup) {
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  input.value = '';
 }
-function closePopup() {
+function closeZoomPopup(zoomPopup) {
 zoomPopup.classList.remove('popup_opened-zoom');
 }
 
@@ -106,6 +108,7 @@ function popupZoomClose(zoomPopup) {
   zoomPopup.classList.remove('popup_opened-zoom');
 }
 
+initialCards.forEach(addCard());
 /*initialCards.forEach(function (element) {
   const card = createCard(element);
   cardsContainer.prepend(card);
@@ -123,7 +126,7 @@ function handleFormPhotoSubmit(evt) {
   };
 
   addCard(newCard, cardsContainer);
-  popupAddPhotoClose();
+  closePopup();
 }
 
 function addCard(element, cardsContainer) {
