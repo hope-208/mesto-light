@@ -9,7 +9,7 @@
 
   <body class="body">
     <div class="page">
-      <dialog class="popup popup_edit-profile">
+      <section class="popup popup_edit-profile">
         <div class="popup__container">
           <button
             class="button-close button-close_edit-profile"
@@ -26,12 +26,12 @@
               class="form__input form__input_type-name"
               type="text"
               name="name"
-              value="Жак-Ив Кусто">
+              placeholder="Жак-Ив Кусто">
             <input
               class="form__input form__input_type-job"
               type="text"
               name="job"
-              value="Исследователь океана">
+              placeholder="О себе">
             <button
               class="button-submit button-submit_edit-profile"
               type="submit"
@@ -41,9 +41,9 @@
             </button>
           </form>
         </div>
-      </dialog>
+      </section>
 
-      <dialog class="popup popup_add-photo">
+      <section class="popup popup_add-photo">
         <div class="popup__container">
           <button
             class="button-close button-close_add-photo"
@@ -75,9 +75,9 @@
             </button>
           </form>
         </div>
-      </dialog>
+      </section>
 
-      <dialog class="popup popup_zoom">
+      <section class="popup popup_zoom">
         <div class="popup__zoom-container">
           <button
             class="button-close-zoom"
@@ -90,7 +90,7 @@
           </figcaption>
         </figure>
         </div>
-      </dialog>
+      </section>
 
       <header class="header">
         <img
@@ -144,6 +144,7 @@
       </article>
     </template>
 
+    <script src="scripts/cards.js"></script>
     <script src="scripts/index.js"></script>
   </body>
 </html>
