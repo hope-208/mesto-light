@@ -1,4 +1,4 @@
-import { initialCards } from './cards';
+import { initialCards } from '../scripts/cards.js';
 
 let nameInput = document.querySelector('.form__input_type-name');
 let jobInput = document.querySelector('.form__input_type-job');
