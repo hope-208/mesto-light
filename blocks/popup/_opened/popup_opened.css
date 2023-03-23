@@ -2,3 +2,7 @@
   visibility: visible;
   opacity: 1;
 }
+
+.popup_opened.popup_zoom {
+  background: rgba(0, 0, 0, 0.9);
+}

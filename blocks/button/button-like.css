@@ -26,9 +26,6 @@
   object-position: center;
   -o-object-fit: cover;
   object-fit: cover;
-
-
-
   height: 19px;
   max-width: 23px;
   background: transparent url(../../images/like.svg) no-repeat center / 22px;
@@ -39,8 +36,4 @@
 .button-like:hover {
   opacity: 0.5;
   cursor: pointer;
-}
-
-.button-like:focus {
-  opacity: 0.5;
 }

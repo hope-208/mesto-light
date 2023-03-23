@@ -2,8 +2,11 @@
   margin: 0;
   width: 100%;
   height: 100%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -o-object-fit: cover;
   object-fit: cover;
   overflow: hidden;
+  -o-object-position: center;
   object-position: center;
 }
