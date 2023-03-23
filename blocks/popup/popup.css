@@ -20,6 +20,8 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
   transition: all 0.7s ease;
   opacity: 0;
   visibility: hidden;

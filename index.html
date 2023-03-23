@@ -26,7 +26,7 @@
               class="form__input form__input_type-name"
               type="text"
               name="name"
-              placeholder="Жак-Ив Кусто">
+              placeholder="Имя">
             <input
               class="form__input form__input_type-job"
               type="text"
@@ -77,18 +77,15 @@
         </div>
       </section>
 
-      <section class="popup popup_zoom">
+      <section class="popup popup_zoom" aria-label="Всплывающее окно увеличения фото карточки(места)">
         <div class="popup__zoom-container">
-          <button
-            class="button-close button-close-zoom"
-            type="button"
-          ></button>
+          <button class="button-close button-close_zoom" type="button"></button>
           <figure class="popup__zoom-photo">
             <img class="popup__photo" src="#" alt="#">
             <figcaption class="popup__zoom-title">
               <p class="popup__photo-title"></p>
-          </figcaption>
-        </figure>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -105,11 +102,7 @@
           <div class="profile__info">
             <div class="profile__content">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button
-                class="button-edit"
-                name="edit"
-                type="button"
-              ></button>
+              <button class="button-edit" name="edit" type="button"></button>
             </div>
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
@@ -117,7 +110,6 @@
         </section>
 
         <section class="elements" aria-label="Записи в профиле"></section>
-
       </main>
 
       <footer class="footer">
@@ -127,24 +119,15 @@
 
     <template class="card-template" id="cardTemplate">
       <article class="element">
-        <button
-          class="button-delete"
-          type="button"
-          name="delete"
-        ></button>
+        <button class="button-delete" type="button" name="delete"></button>
         <img class="element__cover" src="https://" alt="#">
         <div class="element__caption">
           <h2 class="element__title"></h2>
-          <button
-            class="button-like"
-            type="button"
-            name="like"
-          ></button>
+          <button class="button-like" type="button" name="like"></button>
         </div>
       </article>
     </template>
 
-    <script src="scripts/cards.js" type="module"></script>
-    <script src="scripts/index.js" type="module"></script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>

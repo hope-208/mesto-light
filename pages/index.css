@@ -6,7 +6,7 @@
 @import url(../blocks/button/button-edit.css);
 @import url(../blocks/button/button-add.css);
 @import url(../blocks/button/button-close.css);
-@import url(../blocks/button/button-close-zoom.css);
+@import url(../blocks/button/button-close_zoom.css);
 @import url(../blocks/button/button-delete.css);
 @import url(../blocks/button/button-submit.css);
 @import url(../blocks/button/button-like.css);
@@ -31,7 +31,6 @@
 @import url(../blocks/popup/__zoom-photo/popup__zoom-photo.css);
 @import url(../blocks/popup/__zoom-title/popup__zoom-title.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
-@import url(../blocks/popup/_opened-zoom/popup_opened-zoom.css);
 
 @import url(../blocks/form/form.css);
 @import url(../blocks/form/__input/form__input.css);

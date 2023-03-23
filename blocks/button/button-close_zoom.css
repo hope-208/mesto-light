@@ -1,4 +1,4 @@
-.button-close-zoom {
+.button-close_zoom {
   margin: 0;
   padding: 0;
   margin-block: 0;
@@ -25,19 +25,20 @@
   object-position: center;
   -o-object-fit: cover;
   object-fit: cover;
-
   position: absolute;
   top: -40px;
   right: -40px;
   width: 32px;
   height: 32px;
   background: transparent url(../../images/Close.svg) no-repeat center / 32px;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
   align-content: center;
   z-index: 11;
 }
 
 @media screen and (max-width: 495px) {
-  .button-close-zoom {
+  .button-close_zoom {
     top: -36px;
     right: 0;
     width: 20px;
@@ -46,11 +47,11 @@
   }
 }
 
-.button-close-zoom:hover {
+.button-close_zoom:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.button-close-zoom:focus {
+.button-close_zoom:focus {
   opacity: 0.6;
 }
