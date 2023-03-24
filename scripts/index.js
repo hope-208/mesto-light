@@ -76,6 +76,7 @@ function createCard(element) {
   const deleteButton = card.querySelector('.button-delete');
 
   coverPhoto.setAttribute('src', element.link);
+  coverPhoto.setAttribute('alt', element.name);
   coverTitle.textContent = element.name;
 
   createLike.addEventListener('click', function (evt) {
@@ -93,10 +94,10 @@ function createCard(element) {
 
 function popupZoomOpen(element) {
   zoomPhoto.setAttribute('src', element.link);
+  zoomPhoto.setAttribute('alt', element.name);
   zoomTitle.textContent = element.name;
 
   openPopup(zoomPopup);
-  closeZoom.addEventListener('click', () => closePopup(zoomPopup));
 }
 
 function handleFormPhotoSubmit(evt) {
@@ -144,6 +145,10 @@ closeAddPhoto.addEventListener('click', function () {
   closePopup(addPhotoPopup);
   titlePhotoInput.value = '';
   linkPhotoInput.value = '';
+});
+
+closeZoom.addEventListener('click', function () {
+  closePopup(zoomPopup);
 });
 
 formElementProfile.addEventListener('submit', handleFormSubmit);
