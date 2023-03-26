@@ -1,5 +1,3 @@
-import { initialCards } from './cards.js';
-
 const popups = document.querySelectorAll('.popup');
 const editProfilePopup = document.querySelector('.popup_edit-profile');
 const addPhotoPopup = document.querySelector('.popup_add-photo');
@@ -20,34 +18,7 @@ const zoomTitle = document.querySelector('.popup__photo-title');
 
 const cardsTemplate = document.querySelector('.card-template').content;
 const cardsContainer = document.querySelector('.elements');
-/*
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-  },
-];
-*/
+
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', handleEscapeKey);
@@ -56,9 +27,11 @@ function openPopup(popup) {
 function closePopup(popup, button) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', handleEscapeKey);
-  button.classList.add('button-submit_disabled');
-  button.disabled = true;
-  disabledButton(button);
+  if (button) {
+    button.classList.add('button-submit_disabled');
+    button.disabled = true;
+    disabledButton(button);
+  }
 }
 
 function disabledButton(button) {
@@ -72,17 +45,18 @@ function disabledButton(button) {
 function handleEscapeKey(evt) {
   if (evt.key === 'Escape') {
     const openedPopup = document.querySelector('.popup_opened');
+    const popupButton = openedPopup.querySelector('.button-submit');
     if (openedPopup) {
-      closePopup(openedPopup);
+      closePopup(openedPopup, popupButton);
     }
   }
 }
 
-const closeOverlay = document.querySelectorAll('.popup');
-closeOverlay.forEach((area) => {
+popups.forEach((area) => {
   area.addEventListener('click', (evt) => {
-    if (!evt.target.classList.contains('form')) {
-      closePopup(evt.target);
+    if (!evt.target.closest('form')) {
+      const popupButton = area.querySelector('.button-submit');
+      closePopup(area, popupButton);
     }
   });
 });
@@ -145,6 +119,7 @@ const setEventListeners = (formElement) => {
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {
+      console.log('input');
       checkInputValidity(formElement, inputElement);
       toggleButtonState(inputList, buttonElement);
     });
@@ -155,10 +130,11 @@ const enableValidation = () => {
   const formList = Array.from(document.querySelectorAll('.form'));
   formList.forEach((formElement) => {
     formElement.addEventListener('submit', function (evt) {
-      evt.preventDefault();
+      console.log(evt);
+      //evt.preventDefault();
     });
-    const fieldsetList = Array.from(formElement.querySelectorAll('.form__set'));
 
+    const fieldsetList = Array.from(formElement.querySelectorAll('.form__set'));
     fieldsetList.forEach((fieldSet) => {
       setEventListeners(fieldSet);
     });
@@ -167,7 +143,20 @@ const enableValidation = () => {
 
 enableValidation();
 
+function openProfilePopup() {
+  //resetValidation(editProfilePopup, formInput, inputErrorClass, errorClass);
+  openPopup(editProfilePopup);
+  profileName.value = nameProfile.textContent;
+  profileJob.value = jobProfile.textContent;
+  toggleButtonState(
+    [profileName, profileJob],
+    createProfile,
+    inactiveButtonClass
+  );
+}
+
 function handleFormSubmit(evt) {
+  console.log(evt);
   evt.preventDefault();
   nameProfile.textContent = profileName.value;
   jobProfile.textContent = profileJob.value;
@@ -229,6 +218,8 @@ editPopup.addEventListener('click', function () {
 });
 
 addPopup.addEventListener('click', function () {
+  photoForm.reset();
+  //resetValidation(addPhotoPopup, formInput, inputErrorClass, errorClass);
   openPopup(addPhotoPopup);
 });
 
