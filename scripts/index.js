@@ -1,3 +1,5 @@
+import { initialCards } from './cards.js';
+
 const popups = document.querySelectorAll('.popup');
 const editProfilePopup = document.querySelector('.popup_edit-profile');
 const addPhotoPopup = document.querySelector('.popup_add-photo');
@@ -18,7 +20,7 @@ const zoomTitle = document.querySelector('.popup__photo-title');
 
 const cardsTemplate = document.querySelector('.card-template').content;
 const cardsContainer = document.querySelector('.elements');
-
+/*
 const initialCards = [
   {
     name: 'Архыз',
@@ -45,7 +47,7 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
   },
 ];
-
+*/
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', handleEscapeKey);
@@ -54,6 +56,8 @@ function openPopup(popup) {
 function closePopup(popup, button) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', handleEscapeKey);
+  button.classList.add('button-submit_disabled');
+  button.disabled = true;
   disabledButton(button);
 }
 
@@ -61,6 +65,7 @@ function disabledButton(button) {
   const buttonActive = submitPopup.getAttribute('disabled');
   if (!buttonActive) {
     button.classList.add('button-submit_disabled');
+    button.disabled = true;
   }
 }
 
@@ -119,8 +124,10 @@ const checkInputValidity = (formElement, inputElement) => {
 const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add('button-submit_disabled');
+    buttonElement.disabled = true;
   } else {
     buttonElement.classList.remove('button-submit_disabled');
+    buttonElement.disabled = false;
   }
 };
 
@@ -161,7 +168,6 @@ const enableValidation = () => {
 enableValidation();
 
 function handleFormSubmit(evt) {
-  console.log(evt);
   evt.preventDefault();
   nameProfile.textContent = profileName.value;
   jobProfile.textContent = profileJob.value;
@@ -253,7 +259,3 @@ cardsContainer.addEventListener('click', function (evt) {
     evt.target.closest('.element').remove();
   }
 });
-
-createProfile.addEventListener('submit', handleFormSubmit);
-
-createCardButton.addEventListener('submit', handleFormPhotoSubmit);
