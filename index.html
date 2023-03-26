@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pages/index.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pages/index.css" />
     <title>Mesto</title>
   </head>
 
@@ -14,31 +14,45 @@
           <button
             class="button-close button-close_edit-profile"
             type="button"
-            form="popupFormEditProfile"
+            form="profile"
           ></button>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form
-            class="form form_edit-profile"
-            name="popupFormEditProfile"
-            id="popupFormEditProfile"
-          >
-            <input
-              class="form__input form__input_type-name"
-              type="text"
-              name="name"
-              placeholder="Имя">
-            <input
-              class="form__input form__input_type-job"
-              type="text"
-              name="job"
-              placeholder="О себе">
-            <button
-              class="button-submit button-submit_edit-profile"
-              type="submit"
-              form="popupFormEditProfile"
-            >
-              Сохранить
-            </button>
+
+          <form class="form form_edit-profile" name="profile" novalidate>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <fieldset class="form__set">
+              <label class="form__label">
+                <input
+                  class="form__input form__input_type-name"
+                  type="text"
+                  name="login"
+                  id="login"
+                  placeholder="Имя"
+                  minlength="2"
+                  maxlength="40"
+                  required />
+                <span class="error login-error"></span
+              ></label>
+              <label class="form__label"
+                ><input
+                  class="form__input form__input_type-job"
+                  type="text"
+                  name="job"
+                  id="job"
+                  placeholder="О себе"
+                  minlength="2"
+                  maxlength="200"
+                  required />
+                <span class="error job-error"></span
+              ></label>
+              <button
+                class="button-submit button-submit_edit-profile button-submit_disabled"
+                type="submit"
+                form="profile"
+                disabled
+              >
+                Сохранить
+              </button>
+            </fieldset>
           </form>
         </div>
       </section>
@@ -48,40 +62,55 @@
           <button
             class="button-close button-close_add-photo"
             type="button"
-            form="popupFormAddPhoto"
+            form="formAddPhoto"
           ></button>
-          <h2 class="popup__title">Новое место</h2>
-          <form
-            class="form form_add-photo"
-            name="popupFormAddPhoto"
-            id="popupFormAddPhoto"
-          >
-            <input
-              class="form__input form__input_photo-title"
-              type="text"
-              name="photoTitle"
-              placeholder="Название">
-            <input
-              class="form__input form__input_photo-link"
-              type="text"
-              name="photoLink"
-              placeholder="Ссылка на картинку">
-            <button
-              class="button-submit button-submit_add-photo"
-              type="submit"
-              form="popupFormAddPhoto"
-            >
-              Создать
-            </button>
+
+          <form class="form form_add-photo" name="formAddPhoto" novalidate>
+            <h2 class="popup__title">Новое место</h2>
+            <fieldset class="form__set">
+              <label class="form__label"
+                ><input
+                  class="form__input form__input_photo-title"
+                  type="text"
+                  name="title"
+                  id="title"
+                  placeholder="Название"
+                  minlength="1"
+                  maxlength="30"
+                  required />
+                <span class="error title-error"></span
+              ></label>
+              <label class="form__label"
+                ><input
+                  class="form__input form__input_photo-link"
+                  type="url"
+                  name="link"
+                  id="link"
+                  placeholder="Ссылка на картинку"
+                  required />
+                <span class="error link-error"></span
+              ></label>
+              <button
+                class="button-submit button-submit_add-photo button-submit_disabled"
+                type="submit"
+                form="formAddPhoto"
+                disabled
+              >
+                Создать
+              </button>
+            </fieldset>
           </form>
         </div>
       </section>
 
-      <section class="popup popup_zoom" aria-label="Всплывающее окно увеличения фото карточки(места)">
+      <section
+        class="popup popup_zoom"
+        aria-label="Всплывающее окно увеличения фото карточки(места)"
+      >
         <div class="popup__zoom-container">
           <button class="button-close button-close_zoom" type="button"></button>
           <figure class="popup__zoom-photo">
-            <img class="popup__photo" src="#" alt="#">
+            <img class="popup__photo" src="#" alt="#" />
             <figcaption class="popup__zoom-title">
               <p class="popup__photo-title"></p>
             </figcaption>
@@ -93,12 +122,13 @@
         <img
           class="header__logo"
           src="images/logo.svg"
-          alt="Логотип: Mesto Russia">
+          alt="Логотип: Mesto Russia"
+        />
       </header>
 
       <main class="container">
         <section class="profile">
-          <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар">
+          <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар" />
           <div class="profile__info">
             <div class="profile__content">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -120,7 +150,7 @@
     <template class="card-template" id="cardTemplate">
       <article class="element">
         <button class="button-delete" type="button" name="delete"></button>
-        <img class="element__cover" src="https://" alt="#">
+        <img class="element__cover" src="https://" alt="#" />
         <div class="element__caption">
           <h2 class="element__title"></h2>
           <button class="button-like" type="button" name="like"></button>
@@ -128,6 +158,8 @@
       </article>
     </template>
 
+    <script src="scripts/cards.js"></script>
+    <script src="scripts/validate.js"></script>
     <script src="scripts/index.js"></script>
   </body>
 </html>
