@@ -35,11 +35,11 @@
   line-height: 1.2;
   text-align: center;
   z-index: 6;
+  cursor: pointer;
 }
 
 .button-submit:hover {
   opacity: 0.8;
-  cursor: pointer;
 }
 
 .button-submit:focus {
@@ -51,5 +51,6 @@
     max-width: 238px;
     font-size: 14px;
     height: 46px;
+    padding: 14px 117px;
   }
 }
