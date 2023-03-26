@@ -44,6 +44,7 @@ function closePopup(popup, button) {
     button.disabled = true;
     disabledButton(button);
   }
+  formElement.reset();
 }
 
 function handleEscapeKey(evt) {
@@ -80,7 +81,7 @@ function handleFormSubmit(evt) {
   evt.preventDefault();
   nameProfile.textContent = profileName.value;
   jobProfile.textContent = profileJob.value;
-  closePopup(editProfilePopup, closeEditProfile);
+  closePopup(editProfilePopup, createProfile);
   profileName.value = '';
   profileJob.value = '';
 }
@@ -119,7 +120,7 @@ function handleFormPhotoSubmit(evt) {
   };
 
   addCard(newCard);
-  closePopup(addPhotoPopup, closeAddPhoto);
+  closePopup(addPhotoPopup, createCardButton);
 
   photoTitle.value = '';
   photoLink.value = '';
