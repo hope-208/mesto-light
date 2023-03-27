@@ -1,3 +1,13 @@
+const settings = {
+  formSelector: '.form',
+  fieldsetSelector: '.form__set',
+  inputSelector: '.form__input',
+  submitButtonSelector: '.button-submit',
+  inactiveButtonClass: 'button-submit_disabled',
+  inputErrorClass: 'form__input-error',
+  errorClass: 'error_active',
+  errorSpanPostfix: '-error',
+};
 const popups = document.querySelectorAll('.popup');
 const editProfilePopup = document.querySelector('.popup_edit-profile');
 const addPhotoPopup = document.querySelector('.popup_add-photo');
@@ -31,59 +41,43 @@ const formElement = document.querySelector('.form');
 const formInput = formElement.querySelector('.form__input');
 const formError = formElement.querySelector(`.${formInput.id}-error`);
 
+enableValidation(settings);
+
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', handleEscapeKey);
 }
 
-function closePopup(popup, button) {
+popups.forEach((popup) => {
+  popup.addEventListener('mousedown', (evt) => {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopup(popup);
+    }
+    if (evt.target.classList.contains('button-close')) {
+      closePopup(popup);
+    }
+  });
+});
+
+function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', handleEscapeKey);
-  if (button) {
-    button.classList.add('button-submit_disabled');
-    button.disabled = true;
-    disabledButton(button);
-  }
-  formElement.reset();
 }
 
 function handleEscapeKey(evt) {
   if (evt.key === 'Escape') {
     const openedPopup = document.querySelector('.popup_opened');
-    const popupButton = openedPopup.querySelector('.button-submit');
     if (openedPopup) {
-      closePopup(openedPopup, popupButton);
+      closePopup(openedPopup);
     }
   }
-}
-
-popups.forEach((area) => {
-  area.addEventListener('click', (evt) => {
-    if (!evt.target.closest('form')) {
-      const popupButton = area.querySelector('.button-submit');
-      closePopup(area, popupButton);
-    }
-  });
-});
-
-function openProfilePopup() {
-  openPopup(editProfilePopup);
-  profileName.value = nameProfile.textContent;
-  profileJob.value = jobProfile.textContent;
-  toggleButtonState(
-    [profileName, profileJob],
-    createProfile,
-    inactiveButtonClass
-  );
 }
 
 function handleFormSubmit(evt) {
   evt.preventDefault();
   nameProfile.textContent = profileName.value;
   jobProfile.textContent = profileJob.value;
-  closePopup(editProfilePopup, createProfile);
-  profileName.value = '';
-  profileJob.value = '';
+  closePopup(editProfilePopup);
 }
 
 function createCard(element) {
@@ -120,10 +114,7 @@ function handleFormPhotoSubmit(evt) {
   };
 
   addCard(newCard);
-  closePopup(addPhotoPopup, createCardButton);
-
-  photoTitle.value = '';
-  photoLink.value = '';
+  closePopup(addPhotoPopup);
 }
 
 function addCard(element) {
@@ -137,23 +128,37 @@ initialCards.forEach(function (element) {
 
 editPopup.addEventListener('click', function () {
   openPopup(editProfilePopup);
+  profileName.value = nameProfile.textContent;
+  checkInputValidity(profileForm, profileName, settings);
+  profileJob.value = jobProfile.textContent;
+  checkInputValidity(profileForm, profileJob, settings);
+  toggleButtonState(
+    [profileName, profileJob],
+    createProfile,
+    settings.inactiveButtonClass
+  );
 });
 
 addPopup.addEventListener('click', function () {
   photoForm.reset();
+  hideInputError(photoForm, photoTitle, settings);
+  hideInputError(photoForm, photoLink, settings);
   openPopup(addPhotoPopup);
+  toggleButtonState(
+    [photoTitle, photoLink],
+    createCardButton,
+    settings.inactiveButtonClass
+  );
 });
 
 closeEditProfile.addEventListener('click', function () {
-  closePopup(editProfilePopup, createProfile);
-  profileForm.reset();
+  closePopup(editProfilePopup);
 });
 
 profileForm.addEventListener('submit', handleFormSubmit);
 
 closeAddPhoto.addEventListener('click', function () {
-  closePopup(addPhotoPopup, createCardButton);
-  photoForm.reset();
+  closePopup(addPhotoPopup);
 });
 
 closeZoom.addEventListener('click', function () {
