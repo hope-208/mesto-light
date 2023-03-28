@@ -18,9 +18,6 @@ const jobProfile = document.querySelector('.profile__subtitle');
 const editPopup = document.querySelector('.button-edit');
 const addPopup = document.querySelector('.button-add');
 const submitPopup = document.querySelector('.button-submit');
-const closeEditProfile = document.querySelector('.button-close_edit-profile');
-const closeAddPhoto = document.querySelector('.button-close_add-photo');
-const closeZoom = document.querySelector('.button-close_zoom');
 const createProfile = document.querySelector('.button-submit_edit-profile');
 const createCardButton = document.querySelector('.button-submit_add-photo');
 const zoomPhoto = document.querySelector('.popup__photo');
@@ -151,19 +148,7 @@ addPopup.addEventListener('click', function () {
   );
 });
 
-closeEditProfile.addEventListener('click', function () {
-  closePopup(editProfilePopup);
-});
-
 profileForm.addEventListener('submit', handleFormSubmit);
-
-closeAddPhoto.addEventListener('click', function () {
-  closePopup(addPhotoPopup);
-});
-
-closeZoom.addEventListener('click', function () {
-  closePopup(zoomPopup);
-});
 
 photoForm.addEventListener('submit', handleFormPhotoSubmit);
 
