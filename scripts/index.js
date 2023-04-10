@@ -1,6 +1,8 @@
+import { Card } from './cards.js';
+
+import { FormValidator } from './validate.js';
+
 const settings = {
-  formSelector: '.form',
-  fieldsetSelector: '.form__set',
   inputSelector: '.form__input',
   submitButtonSelector: '.button-submit',
   inactiveButtonClass: 'button-submit_disabled',
@@ -11,19 +13,12 @@ const settings = {
 const popups = document.querySelectorAll('.popup');
 const editProfilePopup = document.querySelector('.popup_edit-profile');
 const addPhotoPopup = document.querySelector('.popup_add-photo');
-const zoomPopup = document.querySelector('.popup_zoom');
-const popupContainer = document.querySelector('.popup__container');
+
 const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
 const editPopup = document.querySelector('.button-edit');
 const addPopup = document.querySelector('.button-add');
-const submitPopup = document.querySelector('.button-submit');
-const createProfile = document.querySelector('.button-submit_edit-profile');
-const createCardButton = document.querySelector('.button-submit_add-photo');
-const zoomPhoto = document.querySelector('.popup__photo');
-const zoomTitle = document.querySelector('.popup__photo-title');
 
-const cardsTemplate = document.querySelector('.card-template').content;
 const cardsContainer = document.querySelector('.elements');
 
 const profileForm = document.forms.profile;
@@ -34,13 +29,13 @@ const photoForm = document.forms.formAddPhoto;
 const photoTitle = photoForm.elements.title;
 const photoLink = photoForm.elements.link;
 
-const formElement = document.querySelector('.form');
-const formInput = formElement.querySelector('.form__input');
-const formError = formElement.querySelector(`.${formInput.id}-error`);
+let profileFormValidation = new FormValidator(settings, profileForm);
+profileFormValidation.enableValidation();
 
-enableValidation(settings);
+let photoFormValidation = new FormValidator(settings, photoForm);
+photoFormValidation.enableValidation();
 
-function openPopup(popup) {
+export function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', handleEscapeKey);
 }
@@ -77,28 +72,6 @@ function handleFormSubmit(evt) {
   closePopup(editProfilePopup);
 }
 
-function createCard(element) {
-  const card = cardsTemplate.cloneNode(true);
-  const coverPhoto = card.querySelector('.element__cover');
-  const coverTitle = card.querySelector('.element__title');
-
-  coverPhoto.setAttribute('src', element.link);
-  coverPhoto.setAttribute('alt', element.name);
-  coverTitle.textContent = element.name;
-
-  coverPhoto.addEventListener('click', () => popupZoomOpen(element));
-
-  return card;
-}
-
-function popupZoomOpen(element) {
-  zoomPhoto.setAttribute('src', element.link);
-  zoomPhoto.setAttribute('alt', element.name);
-  zoomTitle.textContent = element.name;
-
-  openPopup(zoomPopup);
-}
-
 function handleFormPhotoSubmit(evt) {
   evt.preventDefault();
 
@@ -114,38 +87,23 @@ function handleFormPhotoSubmit(evt) {
   closePopup(addPhotoPopup);
 }
 
-function addCard(element) {
-  const card = createCard(element);
-  cardsContainer.prepend(card);
+function addCard(item) {
+  const card = new Card(item.name, item.link);
+  const cardElement = card.generateCard();
+  document.querySelector('.elements').prepend(cardElement);
 }
 
-initialCards.forEach(function (element) {
-  addCard(element);
-});
-
 editPopup.addEventListener('click', function () {
-  openPopup(editProfilePopup);
   profileName.value = nameProfile.textContent;
-  checkInputValidity(profileForm, profileName, settings);
   profileJob.value = jobProfile.textContent;
-  checkInputValidity(profileForm, profileJob, settings);
-  toggleButtonState(
-    [profileName, profileJob],
-    createProfile,
-    settings.inactiveButtonClass
-  );
+  profileFormValidation.resetErrors();
+  openPopup(editProfilePopup);
 });
 
 addPopup.addEventListener('click', function () {
   photoForm.reset();
-  hideInputError(photoForm, photoTitle, settings);
-  hideInputError(photoForm, photoLink, settings);
   openPopup(addPhotoPopup);
-  toggleButtonState(
-    [photoTitle, photoLink],
-    createCardButton,
-    settings.inactiveButtonClass
-  );
+  photoFormValidation.resetErrors();
 });
 
 profileForm.addEventListener('submit', handleFormSubmit);
