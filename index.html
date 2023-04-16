@@ -24,40 +24,38 @@
             novalidate
           >
             <h2 class="popup__title">Редактировать профиль</h2>
-            <fieldset class="form__set">
-              <label class="form__label">
-                <input
-                  class="form__input form__input_type-name"
-                  type="text"
-                  name="login"
-                  id="login"
-                  placeholder="Имя"
-                  minlength="2"
-                  maxlength="40"
-                  required />
-                <span class="error login-error"></span
-              ></label>
-              <label class="form__label"
-                ><input
-                  class="form__input form__input_type-job"
-                  type="text"
-                  name="job"
-                  id="job"
-                  placeholder="О себе"
-                  minlength="2"
-                  maxlength="200"
-                  required />
-                <span class="error job-error"></span
-              ></label>
-              <button
-                class="button-submit button-submit_edit-profile button-submit_disabled"
-                type="submit"
-                form="profile"
-                disabled
-              >
-                Сохранить
-              </button>
-            </fieldset>
+            <label class="form__label">
+              <input
+                class="form__input form__input_type-name"
+                type="text"
+                name="login"
+                id="login"
+                placeholder="Имя"
+                minlength="2"
+                maxlength="40"
+                required />
+              <span class="error login-error"></span
+            ></label>
+            <label class="form__label"
+              ><input
+                class="form__input form__input_type-job"
+                type="text"
+                name="job"
+                id="job"
+                placeholder="О себе"
+                minlength="2"
+                maxlength="200"
+                required />
+              <span class="error job-error"></span
+            ></label>
+            <button
+              class="button-submit button-submit_edit-profile button-submit_disabled"
+              type="submit"
+              form="profile"
+              disabled
+            >
+              Сохранить
+            </button>
           </form>
         </div>
       </section>
@@ -77,38 +75,36 @@
             novalidate
           >
             <h2 class="popup__title">Новое место</h2>
-            <fieldset class="form__set">
-              <label class="form__label"
-                ><input
-                  class="form__input form__input_photo-title"
-                  type="text"
-                  name="title"
-                  id="title"
-                  placeholder="Название"
-                  minlength="1"
-                  maxlength="30"
-                  required />
-                <span class="error title-error"></span
-              ></label>
-              <label class="form__label"
-                ><input
-                  class="form__input form__input_photo-link"
-                  type="url"
-                  name="link"
-                  id="link"
-                  placeholder="Ссылка на картинку"
-                  required />
-                <span class="error link-error"></span
-              ></label>
-              <button
-                class="button-submit button-submit_add-photo button-submit_disabled"
-                type="submit"
-                form="formAddPhoto"
-                disabled
-              >
-                Создать
-              </button>
-            </fieldset>
+            <label class="form__label"
+              ><input
+                class="form__input form__input_photo-title"
+                type="text"
+                name="title"
+                id="title"
+                placeholder="Название"
+                minlength="1"
+                maxlength="30"
+                required />
+              <span class="error title-error"></span
+            ></label>
+            <label class="form__label"
+              ><input
+                class="form__input form__input_photo-link"
+                type="url"
+                name="link"
+                id="link"
+                placeholder="Ссылка на картинку"
+                required />
+              <span class="error link-error"></span
+            ></label>
+            <button
+              class="button-submit button-submit_add-photo button-submit_disabled"
+              type="submit"
+              form="formAddPhoto"
+              disabled
+            >
+              Создать
+            </button>
           </form>
         </div>
       </section>
@@ -168,8 +164,6 @@
       </article>
     </template>
 
-    <script type="module" src="./scripts/cards.js"></script>
-    <script type="module" src="./scripts/validate.js"></script>
     <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

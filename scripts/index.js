@@ -1,11 +1,40 @@
-import { Card } from './cards.js';
+import { Card } from './Cards.js';
 
 import { FormValidator } from './validate.js';
+
+export const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
+  },
+];
 
 const settings = {
   inputSelector: '.form__input',
   submitButtonSelector: '.button-submit',
   inactiveButtonClass: 'button-submit_disabled',
+  createProfile: 'button-submit_edit-profile',
+  createCardButton: 'button-submit_add-photo',
   inputErrorClass: 'form__input-error',
   errorClass: 'error_active',
   errorSpanPostfix: '-error',
@@ -18,6 +47,8 @@ const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
 const editPopup = document.querySelector('.button-edit');
 const addPopup = document.querySelector('.button-add');
+/*const createProfile = document.querySelector('.button-submit_edit-profile');
+const createCardButton = document.querySelector('.button-submit_add-photo');*/
 
 const cardsContainer = document.querySelector('.elements');
 
@@ -29,10 +60,10 @@ const photoForm = document.forms.formAddPhoto;
 const photoTitle = photoForm.elements.title;
 const photoLink = photoForm.elements.link;
 
-let profileFormValidation = new FormValidator(settings, profileForm);
+const profileFormValidation = new FormValidator(settings, profileForm);
 profileFormValidation.enableValidation();
 
-let photoFormValidation = new FormValidator(settings, photoForm);
+const photoFormValidation = new FormValidator(settings, photoForm);
 photoFormValidation.enableValidation();
 
 export function openPopup(popup) {
@@ -87,10 +118,15 @@ function handleFormPhotoSubmit(evt) {
   closePopup(addPhotoPopup);
 }
 
-function addCard(item) {
-  const card = new Card(item.name, item.link);
+function createCard(item) {
+  const card = new Card(item, '.card-template');
   const cardElement = card.generateCard();
-  document.querySelector('.elements').prepend(cardElement);
+  return cardElement;
+}
+
+function addCard(item) {
+  const cardElement = createCard(item);
+  cardsContainer.prepend(cardElement);
 }
 
 editPopup.addEventListener('click', function () {
@@ -98,24 +134,30 @@ editPopup.addEventListener('click', function () {
   profileJob.value = jobProfile.textContent;
   profileFormValidation.resetErrors();
   openPopup(editProfilePopup);
+  profileFormValidation.toggleButtonState(
+    [profileName, profileJob],
+    settings.createProfile,
+    settings.inactiveButtonClass
+  );
 });
 
 addPopup.addEventListener('click', function () {
   photoForm.reset();
   openPopup(addPhotoPopup);
   photoFormValidation.resetErrors();
+  photoFormValidation.toggleButtonState(
+    [photoTitle, photoLink],
+    settings.createCardButton,
+    settings.inactiveButtonClass
+  );
 });
 
 profileForm.addEventListener('submit', handleFormSubmit);
 
 photoForm.addEventListener('submit', handleFormPhotoSubmit);
 
-cardsContainer.addEventListener('click', function (evt) {
-  if (evt.target.classList.contains('button-like')) {
-    evt.target.classList.toggle('button-like_active');
-  }
-
-  if (evt.target.classList.contains('button-delete')) {
-    evt.target.closest('.element').remove();
-  }
+initialCards.forEach((item) => {
+  const card = new Card(item, '.card-template');
+  const cardElement = card.generateCard();
+  cardsContainer.prepend(cardElement);
 });
