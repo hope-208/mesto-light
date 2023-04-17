@@ -1,6 +1,6 @@
 import { Card } from './Cards.js';
 
-import { FormValidator } from './validate.js';
+import { FormValidator } from './FormValidator.js';
 
 export const initialCards = [
   {
