@@ -47,6 +47,8 @@ const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
 const editPopup = document.querySelector('.button-edit');
 const addPopup = document.querySelector('.button-add');
+/*const createProfile = document.querySelector('.button-submit_edit-profile');
+const createCardButton = document.querySelector('.button-submit_add-photo');*/
 
 const cardsContainer = document.querySelector('.elements');
 
