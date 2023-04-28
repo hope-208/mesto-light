@@ -1,3 +1,19 @@
+// теперь картинки можно импортировать,
+// вебпак добавит в переменные правильные пути
+import '../pages/index.css';
+/*
+const avatar = new URL('../images/avatar.jpg', import.meta.url);
+const logo = new URL('../images/logo.svg', import.meta.url);
+/*const bryantImage = new URL('./images/bryant.jpg', import.meta.url);
+
+const whoIsTheGoat = [
+  // меняем исходные пути на переменные
+  { name: 'Michael Jordan', image: avatar },
+  { name: 'Lebron James', link: logo } /*
+  { name: 'Kobe Bryant', link: bryantImage },,
+  ,
+];*/
+
 import Section from '../components/Section.js';
 import Card from '../components/Cards.js';
 import PopupWithForm from '../components/PopupWithForm.js';
