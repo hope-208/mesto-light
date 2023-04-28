@@ -1,14 +1,9 @@
-import { openPopup } from './index.js';
-
-export class Card {
-  static _zoomPopup = document.querySelector('.popup_zoom');
-  static _zoomPhoto = document.querySelector('.popup__photo');
-  static _zoomTitle = document.querySelector('.popup__photo-title');
-
-  constructor(data, templateSelector) {
+export default class Card {
+  constructor(data, templateSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -18,14 +13,6 @@ export class Card {
       .cloneNode(true);
 
     return cardElement;
-  }
-
-  _popupZoomOpen() {
-    Card._zoomPhoto.setAttribute('src', this._link);
-    Card._zoomPhoto.setAttribute('alt', this._name);
-    Card._zoomTitle.textContent = this._name;
-
-    openPopup(Card._zoomPopup);
   }
 
   _handleLikeClick() {
@@ -46,7 +33,7 @@ export class Card {
     this._likeButton = this._element.querySelector('.button-like');
     this._deleteButton = this._element.querySelector('.button-delete');
 
-    elementCover.addEventListener('click', () => this._popupZoomOpen());
+    elementCover.addEventListener('click', () => this._handleCardClick());
 
     this._likeButton.addEventListener('click', () => this._handleLikeClick());
 
