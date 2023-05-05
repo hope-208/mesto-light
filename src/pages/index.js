@@ -1,21 +1,7 @@
-// теперь картинки можно импортировать,
-// вебпак добавит в переменные правильные пути
 import '../pages/index.css';
-/*
-const avatar = new URL('../images/avatar.jpg', import.meta.url);
-const logo = new URL('../images/logo.svg', import.meta.url);
-/*const bryantImage = new URL('./images/bryant.jpg', import.meta.url);
-
-const whoIsTheGoat = [
-  // меняем исходные пути на переменные
-  { name: 'Michael Jordan', image: avatar },
-  { name: 'Lebron James', link: logo } /*
-  { name: 'Kobe Bryant', link: bryantImage },,
-  ,
-];*/
 
 import Section from '../components/Section.js';
-import Card from '../components/Cards.js';
+import Card from '../components/Card.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import UserInfo from '../components/UserInfo.js';
@@ -43,15 +29,15 @@ const profile = new UserInfo({
   jobSelector: '.profile__subtitle',
 });
 
-const editProfilePopup = new PopupWithForm('.popup_edit-profile', (evt) => {
-  evt.preventDefault();
-  const inputValues = editProfilePopup._getInputValues();
-  profile.setUserInfo({
-    newName: inputValues.login,
-    newJob: inputValues.job,
-  });
-  editProfilePopup.close();
-});
+const editProfilePopup = new PopupWithForm(
+  '.popup_edit-profile',
+  (inputValues) => {
+    profile.setUserInfo({
+      newName: inputValues.login,
+      newJob: inputValues.job,
+    });
+  }
+);
 
 const cardList = new Section(
   {
@@ -77,18 +63,12 @@ function createCard(item) {
   return cardElement;
 }
 
-const addPhotoPopup = new PopupWithForm('.popup_add-photo', (evt) => {
-  evt.preventDefault();
-  const inputPhoto = addPhotoPopup._getInputValues();
-
+const addPhotoPopup = new PopupWithForm('.popup_add-photo', (inputPhoto) => {
   const newCard = {
     name: inputPhoto.title,
     link: inputPhoto.link,
   };
-
   cardList.addItem(createCard(newCard));
-
-  addPhotoPopup.close();
 });
 
 editPopupButton.addEventListener('click', () => {
@@ -104,7 +84,6 @@ editPopupButton.addEventListener('click', () => {
 });
 
 addPopupButton.addEventListener('click', () => {
-  photoForm.reset();
   addPhotoPopup.open();
   photoFormValidation.resetErrors();
   photoFormValidation.toggleButtonState();

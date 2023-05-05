@@ -22,7 +22,7 @@ export class FormValidator {
 
   _showInputError(inputElement, errorMessage) {
     const errorElement = this._form.querySelector(
-      '.' + inputElement.id + this._errorSpanPostfix
+      `.${inputElement.id}${this._errorSpanPostfix}`
     );
     inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = errorMessage;
@@ -31,7 +31,7 @@ export class FormValidator {
 
   _hideInputError(inputElement) {
     const errorElement = this._form.querySelector(
-      '.' + inputElement.id + this._errorSpanPostfix
+      `.${inputElement.id}${this._errorSpanPostfix}`
     );
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.classList.remove(this._errorClass);
@@ -68,7 +68,7 @@ export class FormValidator {
     const thisObject = this;
 
     this._inputList.forEach((inputElement) => {
-      inputElement.addEventListener('input', function () {
+      inputElement.addEventListener('input', () => {
         thisObject._checkInputValidity(inputElement);
         thisObject.toggleButtonState();
       });
