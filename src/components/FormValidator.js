@@ -65,12 +65,12 @@ export class FormValidator {
   _setEventListeners() {
     this.toggleButtonState();
 
-    const thisObject = this;
+    //const thisObject = this;
 
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-        thisObject._checkInputValidity(inputElement);
-        thisObject.toggleButtonState();
+        this._checkInputValidity(inputElement);
+        this.toggleButtonState();
       });
     });
   }
