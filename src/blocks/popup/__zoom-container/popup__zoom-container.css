@@ -1,8 +1,0 @@
-.popup__zoom-container {
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  margin: auto;
-  flex-direction: column;
-  justify-content: space-between;
-}
